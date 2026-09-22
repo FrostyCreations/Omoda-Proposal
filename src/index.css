@@ -28,6 +28,9 @@
   --dark-surface: #30363a;
   --dark-surface-2: #1f1f2e;
 
+  /* Big On Digital orange, from the agency logo */
+  --agency-orange: #ff9933;
+
   /* Typography */
   --font-main: 'Inter', system-ui, -apple-system, sans-serif;
   /* Michroma stands in for Pirulen, the wide headline face on their site */

@@ -49,7 +49,7 @@ const QuotesPage = () => {
   ].filter(Boolean);
 
   const getApprovalText = () => {
-    const lines = [`${proposalData.client?.name}: Digital Marketing Proposal approved.`, ''];
+    const lines = [`${proposalData.client?.name}: Social Media Proposal approved.`, ''];
     if (setup) {
       lines.push(setup.title);
       setup.rows.forEach(row => lines.push(`- ${row.service}: ${row.price}`));

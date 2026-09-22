@@ -5,8 +5,14 @@
   padding: 32px 0 40px;
 }
 
+.quotes-page {
+  padding-bottom: 0;
+}
+
+/* The footer renders inside .quotes-page, so the breathing room goes above it */
 .quotes-container {
   padding-top: 48px;
+  padding-bottom: 120px;
 }
 
 .quote-steps {

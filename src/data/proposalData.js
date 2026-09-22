@@ -13,8 +13,8 @@ export const proposalData = {
     "contactEmail": "hello@bigondigital.com"
   },
   hero: {
-    "eyebrow": "Digital Marketing Proposal",
     "title": "OMODA | JAECOO The Glen",
+    "banner": { "text": "Social Media Proposal by", "agency": "Big On Digital" },
     "heroBgUrl": "/glen/jaecoo-j5-hero.webp"
   },
   sections: [
@@ -138,6 +138,8 @@ export const proposalData = {
       type: 'SetupSummary',
       id: 'setup-summary',
       data: {
+        // Shown on the quotes page only; the main proposal skips it
+        hideFromProposal: true,
         title: "Once-Off Setup Summary",
         columns: ["Service", "Price"],
         rows: [
@@ -410,6 +412,57 @@ export const proposalData = {
           "Package 3 offers the most complete approach, connecting original dealership content with social media management and targeted Meta advertising."
         ],
         imageUrl: "/glen/omoda-c5-shs.webp"
+      }
+    },
+
+    {
+      type: 'ClientShowcase',
+      id: 'clients',
+      data: {
+        title: "Some of our Clients",
+        clients: [
+          { name: "Ferris Cars", tagline: "Luxury Performance Automotive Group", logoUrl: "/clients/ferris-group.webp", platform: "Facebook", url: "https://www.facebook.com/ferriscarssa/" },
+          { name: "WorkPods", tagline: "Entrepreneurial Business Growth Campus", logoUrl: "/clients/workpods.webp", platform: "Instagram", url: "https://www.instagram.com/workpodscommunity/" },
+          { name: "Century 21 Wildlife", tagline: "Luxury Bushveld Property Experts", logoUrl: "/clients/century-21-wildlife.webp", platform: "Website", url: "https://www.century21wildlife.co.za/" },
+          { name: "Cashbox Global", tagline: "Private Structured Investment Specialists", logoUrl: "/clients/cashbox-global.webp", platform: "LinkedIn", url: "https://www.linkedin.com/company/cashbox-global/" }
+        ]
+      }
+    },
+    {
+      type: 'AboutAgency',
+      id: 'about',
+      data: {
+        // Copy and team from the VanillaHub proposal
+        title: "About Big On Digital",
+        paragraphs: [
+          "Big On Digital is a boutique digital marketing agency offering expert, end-to-end marketing services to both small businesses and large corporations. With over two decades of combined industry experience, our team specialises in social media, branding, web development, and digital strategy that help clients grow their reach and strengthen their brand presence.",
+          "We believe in the power of creativity, strategy, and innovation to transform businesses. Every project is approached with purpose and precision, combining design, technology, and storytelling to deliver meaningful results.",
+          "Our team brings a dynamic mix of talent and insight, ensuring each brand we work with receives customised, high-impact digital solutions that drive measurable success.",
+          "At Big On Digital, we don’t just build brands, we bring visions to life."
+        ],
+        team: [
+          {
+            name: "Andy",
+            title: "Technical & Performance Lead",
+            subtitle: "Development & Paid Media",
+            description: "Andy owns the technical and performance layer of the agency. From website development to paid advertising and tracking, he ensures every campaign is built on strong systems and optimised for results.",
+            image: "/team/andy.jpg"
+          },
+          {
+            name: "Dominique",
+            title: "Founder & Strategic Director",
+            subtitle: "Growth & Strategy",
+            description: "Dominique defines the vision behind every project, guiding brand positioning, marketing strategy, and long-term growth. She works closely with clients to translate ambition into structured digital direction that delivers measurable results.",
+            image: "/team/dominique.jpg"
+          },
+          {
+            name: "Francois",
+            title: "Creative & AI Lead",
+            subtitle: "Content, Design & Innovation",
+            description: "Francois leads creative execution while driving the integration of AI across content and workflows. He shapes how ideas come to life, from social media and design to intelligent content systems, ensuring the brand remains both relevant and forward-thinking.",
+            image: "/team/francois.jpg"
+          }
+        ]
       }
     }
   ],
