@@ -1,0 +1,134 @@
+.achievements-section {
+  padding: 120px 0;
+  background: var(--dark-surface);
+  position: relative;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.achievements-list {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.achievements-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  font-size: 1.15rem;
+  color: #e2eaf4;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.achievement-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.text-success {
+  color: var(--accent-secondary);
+}
+
+.text-primary {
+  color: var(--text-primary) !important;
+}
+
+.achievements-visual {
+  position: relative;
+}
+
+.visual-panel {
+  padding: 60px 40px;
+  position: relative;
+  overflow: hidden;
+  background: var(--dark-surface-2);
+  border-radius: 24px;
+  border: 1px solid rgba(213, 200, 166, 0.2);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.year-badge {
+  display: inline-block;
+  background: var(--accent-primary);
+  color: #fff;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.visual-panel h3 {
+  font-size: 1.75rem;
+  color: #f0f6fc;
+  margin-bottom: 30px;
+}
+
+.progress-bar-container {
+  height: 12px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 20px;
+  margin: 0 0 16px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 100%;
+  background: var(--accent-primary);
+  border-radius: 20px;
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 1rem 1rem;
+  animation: progress-stripe 1s linear infinite;
+}
+
+@keyframes progress-stripe {
+  from { background-position: 1rem 0; }
+  to { background-position: 0 0; }
+}
+
+.visual-panel p {
+  font-weight: 600;
+  color: var(--accent-secondary);
+}
+
+/* Charcoal band: headings and text light */
+.achievements-section .section-title,
+.achievements-section h2 {
+  color: #f0f6fc !important;
+}
+
+.achievements-section p {
+  color: #c9d1d9;
+}
+
+.achievements-section .text-success {
+  color: var(--accent-secondary);
+}
+
+
+
+@media (max-width: 1024px) {
+  .achievements-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}

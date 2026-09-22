@@ -1,0 +1,148 @@
+.channel-section {
+  padding: 120px 0;
+  position: relative;
+  background: var(--bg-color);
+  overflow: hidden;
+}
+
+.bg-circle-left {
+  position: absolute;
+  top: 10%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  background: var(--accent-primary);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.channel-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.channel-cards-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  position: relative;
+}
+
+.channel-card {
+  padding: 40px 30px;
+  border-radius: 16px;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+  position: relative;
+}
+
+/* Offset cards to create the overlapping scattered look of Slide 4 */
+.channel-card:nth-child(2) {
+  margin-top: 60px;
+  margin-bottom: -60px;
+}
+
+.channel-card:nth-child(3) {
+  grid-column: span 2;
+  margin-top: 24px;
+  margin-right: 40px;
+}
+
+.card-light {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+}
+.card-light .channel-name { color: var(--text-primary); }
+.card-light .channel-highlight { color: var(--text-secondary); }
+
+.card-dark {
+  background: #1e293b; /* Deep charcoal */
+  color: #ffffff;
+}
+.card-dark .channel-name { color: #ffffff; }
+.card-dark .channel-highlight { color: #cbd5e1; }
+
+.channel-status {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: var(--accent-primary);
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(37, 99, 235, 0.2);
+  display: inline-block;
+}
+
+.channel-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.channel-highlight {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Right Text Side */
+.channel-text-content {
+  padding-right: 40px;
+}
+
+.channel-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+.channel-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.channel-icon-badge {
+  width: 56px;
+  height: 56px;
+  background: var(--accent-primary);
+  color: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .channel-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  
+  .channel-card:nth-child(2) {
+    margin-top: 0;
+    margin-bottom: 0px;
+  }
+  
+  .channel-card:nth-child(3) {
+    margin-right: 0;
+  }
+  
+  .bg-circle-left {
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 400px;
+  }
+}

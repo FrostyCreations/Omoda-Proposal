@@ -1,0 +1,207 @@
+.hero-section.card-layout {
+  padding: 140px 0 60px; /* Increased padding to clear the navbar */
+  background-color: var(--bg-color);
+  min-height: auto;
+}
+
+.hero-main-card {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 7;
+  min-height: 500px;
+  border-radius: 40px;
+  /* NO overflow: hidden here so robot can overlap */
+}
+
+.hero-card-background {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.2);
+}
+
+.hero-card-img,
+.hero-card-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02); /* Slight scale to hide edges */
+}
+
+/* Base Gradient Overlay */
+.hero-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(20, 15, 20, 0.8) 0%, rgba(20, 15, 20, 0.3) 60%, transparent 100%);
+  z-index: 2;
+}
+
+/* Wavy Accent at the absolute bottom of the BG card */
+.hero-wave-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  line-height: 0; /* Ensures no gap below SVG */
+  z-index: 3; /* Above overlay, beneath text/robot */
+}
+
+.hero-wave-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-card-content {
+  position: absolute; /* Changed to absolute to float over bg */
+  top: 0;
+  left: 0;
+  z-index: 10;
+  padding: 8% 6%;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-title {
+  font-size: clamp(1.9rem, 4.4vw, 3.6rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+  text-transform: none; /* Reset from capitalize */
+}
+
+/* Overlapping Robot Container */
+.hero-robot-container {
+  position: absolute;
+  right: 2%;
+  bottom: -280px; /* Dropped significantly to clear header buttons */
+  width: 45%;
+  height: 130%; 
+  z-index: 12;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  pointer-events: none; /* Let clicks pass through */
+}
+
+.hero-robot-img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(-10px 10px 20px rgba(0,0,0,0.3));
+}
+
+/* Floating Widgets */
+.hero-widget {
+  position: absolute;
+  z-index: 11;
+  background: rgba(40, 40, 45, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 16px 20px;
+  color: #fff;
+  transition: transform 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.hero-widget:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.widget-leads {
+  top: 30%;
+  right: 50%; /* Positioned left of the robot */
+  width: 260px;
+}
+
+.widget-conversion {
+  top: 15%;
+  right: 8%; /* Top right above robot */
+  width: 220px;
+}
+
+.widget-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #eaeaea;
+}
+
+.widget-svg-chart {
+  width: 100%;
+  height: 60px;
+}
+
+/* Quote Section */
+.hero-quote-section {
+  margin-top: 100px; /* Increased to avoid feet overlap */
+  padding: 0 40px;
+  max-width: 800px;
+}
+
+.hero-quote {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.hero-quote strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.quote-author {
+  font-weight: 700;
+  color: var(--accent-primary);
+  text-transform: none;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 1024px) {
+  .hero-main-card {
+    aspect-ratio: auto;
+    min-height: 400px;
+  }
+  .hero-card-content {
+    width: 80%;
+    padding: 10% 8%;
+  }
+  .hero-robot-container {
+    opacity: 0.2; /* Fade robot on smaller screens */
+    right: 0;
+    width: 100%;
+    bottom: 0;
+  }
+  .hero-widget {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-overlay {
+    background: radial-gradient(circle at center, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.9) 100%);
+  }
+  .hero-content {
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .hero-description {
+    border-left: none;
+    padding-left: 0;
+  }
+}

@@ -1,0 +1,130 @@
+.client-logos-section {
+  padding: 80px 0;
+  background-color: var(--bg-color); /* Matches the dark background above Next Steps */
+  overflow: hidden;
+  position: relative;
+}
+
+.client-logos-title {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Move fade masks to the new wrapper so they don't scroll with the container */
+.logo-mask {
+  position: relative;
+  width: 100%;
+}
+.logo-mask::before,
+.logo-mask::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 15vw;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+.logo-mask::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-color) 0%, transparent 100%);
+}
+.logo-mask::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-color) 0%, transparent 100%);
+}
+
+.logo-slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  /* Add significant padding to prevent the scaled hover state and tooltip from being cut off */
+  padding: 60px 0 20px 0;
+}
+
+.logo-slider.draggable {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scroll-behavior: auto; /* JS dragging support */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  cursor: grab;
+}
+.logo-slider.draggable::-webkit-scrollbar {
+  display: none;
+}
+.logo-slider.draggable.active {
+  cursor: grabbing;
+}
+
+.logo-track {
+  display: flex;
+  align-items: center;
+  gap: 40px; /* Space between logos */
+  width: max-content;
+}
+
+.client-logo-link {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  min-width: 160px;
+  text-decoration: none;
+}
+
+.client-logo-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0.8;
+  position: relative;
+  z-index: 2;
+}
+
+
+.client-logo-link:hover .client-logo-img {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+/* Text revealed behind logo */
+.logo-tooltip {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  color: var(--accent-primary);
+  font-size: 1rem;
+  font-weight: 700;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.client-logo-link:hover .logo-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+@media (max-width: 768px) {
+  .logo-track {
+    gap: 20px;
+  }
+  .client-logo-link {
+    height: 60px;
+    min-width: 120px;
+  }
+}

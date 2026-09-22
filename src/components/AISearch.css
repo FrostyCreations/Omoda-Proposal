@@ -1,0 +1,109 @@
+.ai-section {
+  padding: 150px 0;
+  background: #0f172a; /* Deep techy slate replacing standard blue for effect */
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at center, rgba(37, 99, 235, 0.2) 0%, transparent 70%);
+  z-index: 1;
+}
+
+.ai-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.ai-content {
+  max-width: 700px;
+}
+
+.ai-icon-pulse {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-white {
+  color: #fff !important;
+}
+
+.z-10 {
+  z-index: 10;
+}
+.relative {
+  position: relative;
+}
+
+.pulse-ring {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 50%;
+  border: 2px solid var(--accent-primary);
+  opacity: 0;
+  animation: pulse-animation 2.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+.pulse-ring.delay {
+  animation-delay: 1.25s;
+}
+
+@keyframes pulse-animation {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+.ai-title {
+  color: #fff;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.inline-sparkle {
+  color: var(--accent-primary);
+}
+
+.ai-description {
+  color: #cbd5e1;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.ai-engines {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.engine-badge {
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.engine-badge:hover {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+}

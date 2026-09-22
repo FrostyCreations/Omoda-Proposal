@@ -1,0 +1,133 @@
+.performance-section {
+  display: flex;
+  min-height: 100vh;
+  padding: 0;
+  position: relative;
+  background: var(--bg-color);
+  overflow: hidden;
+}
+
+.perf-left-image {
+  flex: 0 0 45%;
+  /* Fallback image representing the WorkPods aesthetic */
+  background: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+  position: relative;
+}
+
+.perf-right-content {
+  flex: 1;
+  background: var(--accent-primary);
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 80px 15% 80px 10%;
+  color: #fff;
+  z-index: 1;
+}
+
+/* The massive curved cut extending into the image exactly like Slide 3 */
+.perf-right-content::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  bottom: -20%;
+  left: -120px; /* Moves the curve slightly to the right */
+  width: 500px;
+  background: var(--accent-primary);
+  border-radius: 50%;
+  z-index: -1;
+  box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+}
+
+.perf-content-inner {
+  z-index: 2;
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+}
+
+.perf-title {
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-weight: 800;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  line-height: 1.1;
+}
+
+.metric-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.metric-label {
+  font-size: 1.15rem;
+  font-weight: 500;
+  line-height: 1.4;
+  opacity: 0.95;
+}
+
+.metric-values {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.metric-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.metric-trend {
+  background: rgba(255,255,255,0.2);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.dec-circle-striped {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 8px,
+    #fff 8px,
+    #fff 16px
+  );
+  opacity: 1;
+}
+
+@media (max-width: 992px) {
+  .performance-section {
+    flex-direction: column;
+  }
+  .perf-left-image {
+    flex: 0 0 300px;
+  }
+  .perf-right-content::before {
+    top: -100px;
+    left: -10%;
+    right: -10%;
+    width: auto;
+    height: 200px;
+  }
+  .metric-item {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 20px 0;
+  }
+  .metric-values {
+    justify-content: flex-start;
+  }
+}

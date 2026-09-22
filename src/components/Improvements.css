@@ -1,0 +1,86 @@
+.improvements-section {
+  padding: 120px 0;
+  background: #0f172a; /* Slate 900 for a deep premium dark background */
+  position: relative;
+}
+
+.text-white {
+  color: #fff !important;
+}
+
+.improv-header {
+  margin-bottom: 60px;
+  max-width: 600px;
+}
+
+.improv-subtitle {
+  color: #94a3b8;
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+.improv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.improv-card {
+  background: #1e293b;
+  border-radius: 20px;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, background 0.3s ease;
+  min-height: 250px;
+}
+
+.improv-card:hover {
+  transform: translateY(-10px);
+  background: var(--accent-primary);
+}
+
+.improv-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.2);
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+.improv-card:hover .improv-number {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.improv-text {
+  font-size: 1.1rem;
+  color: #e2e8f0;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.improv-icon {
+  align-self: flex-end;
+  color: rgba(255, 255, 255, 0.3);
+  transition: color 0.3s ease, transform 0.3s ease;
+  margin-top: 30px;
+}
+
+.improv-card:hover .improv-icon {
+  color: #fff;
+  transform: translate(5px, -5px);
+}
+
+@media (max-width: 1024px) {
+  .improv-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .improv-grid {
+    grid-template-columns: 1fr;
+  }
+}

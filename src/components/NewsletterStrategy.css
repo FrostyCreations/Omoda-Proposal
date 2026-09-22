@@ -1,0 +1,119 @@
+.newsletter-section {
+  padding: 120px 0;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+}
+
+.newsletter-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.newsletter-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.text-accent {
+  color: var(--accent-primary);
+}
+
+.newsletter-frequency {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  padding: 12px 24px;
+  border-radius: 50px;
+  border: 1px solid var(--border-color);
+  font-size: 1.1rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  margin-bottom: 40px;
+}
+
+.newsletter-themes h3 {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+.newsletter-themes ul {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.newsletter-themes li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  font-weight: 500;
+  background: #fff;
+  padding: 16px 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.mockup-panel {
+  background: #fff;
+  padding: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  border: 1px solid var(--border-color);
+}
+
+.mockup-header {
+  background: var(--bg-secondary);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid var(--border-color);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.mockup-body {
+  padding: 40px;
+}
+
+.skeleton-line {
+  height: 12px;
+  background: #e2e8f0;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+.skeleton-line.title {
+  height: 24px;
+  width: 60%;
+  margin-bottom: 30px;
+}
+
+.skeleton-image {
+  height: 150px;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  margin: 30px 0;
+}
+
+.skeleton-line.button {
+  height: 40px;
+  width: 140px;
+  background: var(--accent-primary);
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .newsletter-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}

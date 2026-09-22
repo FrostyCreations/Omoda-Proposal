@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&display=swap');
+
+/* ─── Layout ─────────────────────────────────────── */
+.editor-page {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Work Sans', system-ui, sans-serif;
+  background: #0d1117;
+  color: #e6edf3;
+}
+
+/* ─── Sidebar ─────────────────────────────────────── */
+.editor-sidebar {
+  width: 400px;
+  min-width: 320px;
+  max-width: 450px;
+  height: 100vh;
+  background: #161b22;
+  border-right: 1px solid #30363d;
+  display: flex;
+  flex-direction: column;
+}
+
+.editor-scroll-area {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 40px;
+}
+
+.editor-sidebar-header {
+  padding: 24px 20px 16px;
+  border-bottom: 1px solid #30363d;
+  background: #1c2128;
+}
+
+.editor-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #8b949e;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  margin-bottom: 12px;
+  transition: color 0.2s;
+}
+.editor-back-btn:hover { color: #e6edf3; }
+
+.editor-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #e6edf3;
+  margin-bottom: 4px;
+}
+
+.editor-subtitle {
+  font-size: 0.82rem;
+  color: #8b949e;
+  font-weight: 400;
+}
+
+.editor-group-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #30363a;
+  padding: 24px 20px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #1c2128;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* ─── Section Items ───────────────────────────────── */
+.editor-section {
+  border-bottom: 1px solid #21262d;
+  transition: background 0.2s;
+}
+.editor-section.is-open {
+  background: #1c2128;
+}
+
+.editor-section-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 12px 4px 0;
+}
+
+.editor-section-toggle {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: #e6edf3;
+}
+
+.editor-section-label {
+  flex: 1;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #e6edf3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.editor-section-type {
+  font-size: 0.65rem;
+  color: #8b949e;
+  background: #21262d;
+  padding: 2px 8px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.editor-section-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.editor-icon-btn {
+  background: transparent;
+  border: 1px solid #30363d;
+  color: #8b949e;
+  width: 26px;
+  height: 26px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.editor-icon-btn:hover:not(:disabled) {
+  background: #30363d;
+  color: #e6edf3;
+  border-color: #30363a;
+}
+.editor-icon-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.editor-section-body {
+  padding: 0 0 20px;
+  border-top: 1px solid #30363d;
+}
+
+/* ─── Tabs ────────────────────────────────────────── */
+.editor-tabs {
+  display: flex;
+  border-bottom: 1px solid #30363d;
+  background: #0d1117;
+}
+
+.editor-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px;
+  background: transparent;
+  border: none;
+  color: #8b949e;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+.editor-tab.active {
+  color: #30363a;
+  border-bottom-color: #30363a;
+  background: rgba(48, 54, 58, 0.05);
+}
+
+.editor-tab-content {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ─── Fields ──────────────────────────────────────── */
+.editor-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.editor-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #8b949e;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.editor-input,
+.editor-textarea,
+.editor-select {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  color: #e6edf3;
+  font-family: inherit;
+  font-size: 0.9rem;
+  padding: 10px 12px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+.editor-input:focus,
+.editor-textarea:focus,
+.editor-select:focus {
+  outline: none;
+  border-color: #30363a;
+  box-shadow: 0 0 0 3px rgba(48, 54, 58, 0.15);
+}
+
+.editor-textarea { 
+  line-height: 1.5;
+  min-height: 80px;
+}
+
+.editor-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238b949e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 40px;
+}
+
+/* ─── Image Specific ───────────────────────────────── */
+.editor-image-field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.editor-image-preview {
+  width: 100%;
+  height: 120px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.editor-image-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #1c2128;
+}
+
+/* ─── Global Branding Fields Overlay ───────────────── */
+.editor-global {
+  border-bottom: 2px solid #30363d;
+  padding-bottom: 16px;
+}
+
+.editor-global .editor-field {
+  padding: 4px 20px;
+}
+
+/* ─── Actions Sidebar Bottom ───────────────────────── */
+.editor-actions {
+  display: flex;
+  gap: 10px;
+  padding: 16px 20px;
+  border-top: 1px solid #30363d;
+  background: #1c2128;
+}
+
+.editor-btn-export {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: #30363a;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+  box-shadow: 0 4px 12px rgba(48, 54, 58, 0.3);
+}
+.editor-btn-export:hover { 
+  background: #1b3173; 
+  transform: translateY(-1px);
+}
+
+.editor-btn-reset {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: transparent;
+  color: #8b949e;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.editor-btn-reset:hover { 
+  color: #da3633; 
+  border-color: #da3633; 
+  background: rgba(218, 54, 51, 0.05);
+}
+
+/* ─── Preview Panel ────────────────────────────────── */
+.editor-preview {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fff;
+}
+
+.editor-preview-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  background: #1c2128;
+  border-bottom: 1px solid #30363d;
+  flex-shrink: 0;
+}
+
+.editor-preview-label {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #e6edf3;
+  letter-spacing: 0.02em;
+}
+
+.editor-preview-content {
+  flex: 1;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Modal Styling Improvements */
+.editor-modal-code {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 20px;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: #c9d1d9;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+}
