@@ -78,7 +78,7 @@ export const proposalData = {
           ] },
           { type: 'note', text: "Original photography, filming, extensive video editing and active sales inbox management are excluded." }
         ],
-        prices: [{ label: "Standalone price", amount: "R10,425", suffix: "per month" }]
+        prices: [{ label: "Standalone price before package discount", amount: "R10,425", suffix: "per month" }]
       }
     },
 
