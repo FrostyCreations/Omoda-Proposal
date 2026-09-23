@@ -31,9 +31,6 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          # Xneelo expects explicit TLS; plain FTP is refused
-          protocol: ftps
-          port: 21
           local-dir: ./dist/
           server-dir: ./omodatheglen.bigondigital.online/
           # Tracks what has already been uploaded so later runs only send changes
