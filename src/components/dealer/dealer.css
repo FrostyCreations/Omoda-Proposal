@@ -802,3 +802,44 @@
   height: 1px;
   background: rgba(255, 255, 255, 0.35);
 }
+
+/* ---------- Agency logo in the orange bars ---------- */
+.agency-logo {
+  height: 34px;
+  width: auto;
+  display: block;
+  flex-shrink: 0;
+  /* the mark carries orange, so it needs a white chip to stay legible on the orange bar */
+  padding: 4px 6px;
+  background: #ffffff;
+  border-radius: 4px;
+}
+
+.proposal-banner-inner,
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .proposal-banner {
+    padding: 12px 0;
+  }
+
+  .proposal-banner-inner {
+    flex-wrap: nowrap;
+    gap: 12px;
+  }
+
+  .proposal-banner-text {
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+  }
+
+  .agency-logo {
+    height: 26px;
+  }
+}

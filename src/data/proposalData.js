@@ -10,11 +10,12 @@ export const proposalData = {
   },
   agency: {
     "name": "Big On Digital",
-    "contactEmail": "hello@bigondigital.com"
+    "contactEmail": "hello@bigondigital.co.za",
+    "logoUrl": "/big-on-digital-mark.png"
   },
   hero: {
     "title": "OMODA | JAECOO The Glen",
-    "banner": { "text": "Social Media Proposal by", "agency": "Big On Digital" },
+    "banner": { "text": "Social Media Proposal by", "agency": "Big On Digital", "logoUrl": "/big-on-digital-mark.png" },
     "heroBgUrl": "/glen/jaecoo-j5-hero.webp"
   },
   sections: [
@@ -43,6 +44,117 @@ export const proposalData = {
     },
 
     {
+      type: 'PartHeader',
+      id: 'monthly',
+      navLabel: 'Monthly Services',
+      data: {
+        title: "Monthly Marketing Services",
+        imageUrl: "/glen/omoda-c5-studio-dark.webp"
+      }
+    },
+
+    {
+      type: 'Service',
+      id: 'social-management',
+      data: {
+        number: "4",
+        title: "Social Media Design and Management",
+        subtitle: "Keeping the Brand Visible and Relevant",
+        imageUrl: "/stock/social-media-management.jpg",
+        content: [
+          { type: 'p', text: "Big On Digital will plan, create and manage a coordinated monthly presence across Facebook, Instagram, TikTok and Google Business." },
+          { type: 'p', text: "Content will be adapted for each platform, combining vehicle promotions with educational, dealership-led and community content. Clear calls to action will encourage WhatsApp conversations, website visits and test-drive enquiries." },
+          { type: 'list', title: "Monthly scope includes:", items: [
+            "12 core content pieces;",
+            "static designs, carousels and motion graphics;",
+            "monthly content planning;",
+            "copywriting and platform adaptation;",
+            "publishing across Facebook and Instagram;",
+            "selected TikTok publishing;",
+            "Google Business updates;",
+            "basic comment and inbox monitoring;",
+            "monthly performance reporting;",
+            "one monthly planning or review meeting."
+          ] },
+          { type: 'note', text: "Original photography, filming, extensive video editing and active sales inbox management are excluded." }
+        ],
+        prices: [{ label: "Standalone price", amount: "R10,425", suffix: "per month" }]
+      }
+    },
+
+    {
+      type: 'Service',
+      id: 'content-creation',
+      data: {
+        number: "5",
+        title: "Monthly Content Creation",
+        subtitle: "Bringing the Dealership Experience to Life",
+        imageUrl: "/stock/content-creation.jpg",
+        content: [
+          { type: 'p', text: "Monthly on-site content sessions will create a reliable bank of original photography and video. The content will feature selected vehicles, model features, staff, showroom activity, customer experiences and current offers." },
+          { type: 'p', text: "A planned shot list will ensure that each session supports the upcoming social media calendar and advertising campaigns." },
+          { type: 'list', title: "Monthly deliverables include:", items: [
+            "pre-shoot planning and agreed shot list;",
+            "up to three hours on location;",
+            "approximately 30 edited photographs;",
+            "four edited vertical videos;",
+            "standard post-production;",
+            "one reasonable revision round per video."
+          ] },
+          { type: 'p', text: "Short-form video concepts may include vehicle walkarounds, feature demonstrations, staff-led content, test-drive moments and customer handovers." }
+        ],
+        prices: [{ label: "Standalone price", amount: "R9,950", suffix: "per month" }],
+        blocks: [
+          {
+            title: "Influencer Marketing",
+            content: [
+              { type: 'p', text: "Relevant local or automotive creators may be recommended for selected dealership campaigns. Big On Digital can coordinate creator selection, campaign briefing, deliverables, content approvals and reporting through its influencer agency partner." },
+              { type: 'note', text: "Usage rights, travel and additional production costs are quoted separately." }
+            ],
+            prices: [{ label: "Campaign management", amount: "From R8,000", suffix: "per campaign" }]
+          }
+        ]
+      }
+    },
+
+    {
+      type: 'Service',
+      id: 'meta-ads',
+      data: {
+        number: "6",
+        title: "Meta Advertising Management",
+        subtitle: "Turning Attention into Enquiries",
+        imageUrl: "/stock/meta-ads-live.jpg",
+        content: [
+          { type: 'p', text: "Meta advertising will support local awareness, website traffic and lead generation across Facebook and Instagram." },
+          { type: 'p', text: "The campaign structure will prioritise test-drive and vehicle enquiries, supported by retargeting and selected audience-building activity." },
+          { type: 'list', title: "Potential campaign focus:", items: [
+            "test-drive and vehicle enquiries;",
+            "current models and dealership offers;",
+            "WhatsApp and instant-form leads;",
+            "website traffic;",
+            "website and engagement retargeting;",
+            "selected audience-growth activity."
+          ] },
+          { type: 'list', title: "Monthly management includes:", items: [
+            "management of up to three active campaigns;",
+            "campaign planning and setup;",
+            "audience creation;",
+            "creative coordination;",
+            "ongoing optimisation;",
+            "retargeting;",
+            "monthly advertising reporting."
+          ] },
+          { type: 'note', text: "The advertising budget is paid directly by the client to Meta." }
+        ],
+        prices: [
+          { label: "Standalone management fee", amount: "R3,950", suffix: "per month" },
+          { label: "Recommended Meta media budget", amount: "From R6,000", suffix: "per month" }
+        ]
+      }
+    },
+
+    {
       type: 'Packages',
       id: 'packages',
       navLabel: 'Packages',
@@ -56,10 +168,11 @@ export const proposalData = {
             name: "Digital Presence",
             description: "A consistent monthly social media presence designed to strengthen dealership visibility and maintain engagement across priority platforms.",
             items: [
-              { service: "Social Media Design and Management", value: "TBC", pending: true }
+              { service: "Social Media Design and Management", value: "R10,425" }
             ],
-            totalValue: "R9,950",
-            price: "R9,950"
+            totalValue: "R10,425",
+            discount: "R1,200",
+            price: "R9,225"
           },
           {
             id: 'package-2',
@@ -67,12 +180,12 @@ export const proposalData = {
             name: "Content and Community",
             description: "A complete organic marketing package combining social media management with original dealership photography and video.",
             items: [
-              { service: "Social Media Design and Management", value: "TBC", pending: true },
+              { service: "Social Media Design and Management", value: "R10,425" },
               { service: "Monthly Photography and Videography", value: "R9,950" }
             ],
-            totalValue: "R19,900",
-            discount: "R400",
-            price: "R19,500"
+            totalValue: "R20,375",
+            discount: "R1,600",
+            price: "R18,775"
           },
           {
             id: 'package-3',
@@ -80,13 +193,13 @@ export const proposalData = {
             name: "Content and Lead Generation",
             description: "A coordinated content and advertising package designed to build dealership visibility and convert audience attention into measurable enquiries.",
             items: [
-              { service: "Social Media Design and Management", value: "TBC", pending: true },
+              { service: "Social Media Design and Management", value: "R10,425" },
               { service: "Monthly Photography and Videography", value: "R9,950" },
               { service: "Meta Advertising Management", value: "R3,950" }
             ],
-            totalValue: "R23,850",
-            discount: "R900",
-            price: "R22,950",
+            totalValue: "R24,325",
+            discount: "R2,100",
+            price: "R22,225",
             mediaBudget: "Meta media budget: From R6,000 per month, paid directly to Meta.",
             featured: true
           }
@@ -103,6 +216,7 @@ export const proposalData = {
         imageUrl: "/glen/omoda-c5-shs.webp"
       }
     },
+
     {
       type: 'Service',
       id: 'content-planner',
@@ -125,6 +239,7 @@ export const proposalData = {
         prices: [{ label: "Once-off price", amount: "R3,950" }]
       }
     },
+
     {
       type: 'Service',
       id: 'profile-optimisation',
@@ -141,6 +256,7 @@ export const proposalData = {
         prices: [{ label: "Once-off price", amount: "R2,950" }]
       }
     },
+
     {
       type: 'Service',
       id: 'meta-setup',
@@ -186,6 +302,7 @@ export const proposalData = {
         ]
       }
     },
+
     {
       type: 'SetupSummary',
       id: 'setup-summary',
@@ -209,114 +326,6 @@ export const proposalData = {
 
     {
       type: 'PartHeader',
-      id: 'monthly',
-      navLabel: 'Monthly Services',
-      data: {
-        title: "Monthly Marketing Services",
-        imageUrl: "/glen/omoda-c5-studio-dark.webp"
-      }
-    },
-    {
-      type: 'Service',
-      id: 'social-management',
-      data: {
-        number: "4",
-        title: "Social Media Design and Management",
-        subtitle: "Keeping the Brand Visible and Relevant",
-        imageUrl: "/stock/social-media-management.jpg",
-        content: [
-          { type: 'p', text: "Big On Digital will plan, create and manage a coordinated monthly presence across Facebook, Instagram, TikTok and Google Business." },
-          { type: 'p', text: "Content will be adapted for each platform, combining vehicle promotions with educational, dealership-led and community content. Clear calls to action will encourage WhatsApp conversations, website visits and test-drive enquiries." },
-          { type: 'list', title: "Monthly scope includes:", items: [
-            "12 core content pieces;",
-            "static designs, carousels and motion graphics;",
-            "monthly content planning;",
-            "copywriting and platform adaptation;",
-            "publishing across Facebook and Instagram;",
-            "selected TikTok publishing;",
-            "Google Business updates;",
-            "basic comment and inbox monitoring;",
-            "monthly performance reporting;",
-            "one monthly planning or review meeting."
-          ] },
-          { type: 'note', text: "Original photography, filming, extensive video editing and active sales inbox management are excluded." }
-        ],
-        prices: [{ label: "Standalone price", amount: "TBC", pending: true }]
-      }
-    },
-    {
-      type: 'Service',
-      id: 'content-creation',
-      data: {
-        number: "5",
-        title: "Monthly Content Creation",
-        subtitle: "Bringing the Dealership Experience to Life",
-        imageUrl: "/glen/omoda-c9-lifestyle.webp",
-        content: [
-          { type: 'p', text: "Monthly on-site content sessions will create a reliable bank of original photography and video. The content will feature selected vehicles, model features, staff, showroom activity, customer experiences and current offers." },
-          { type: 'p', text: "A planned shot list will ensure that each session supports the upcoming social media calendar and advertising campaigns." },
-          { type: 'list', title: "Monthly deliverables include:", items: [
-            "pre-shoot planning and agreed shot list;",
-            "up to four hours on location;",
-            "approximately 30 edited photographs;",
-            "four edited vertical videos;",
-            "standard post-production;",
-            "one reasonable revision round per video."
-          ] },
-          { type: 'p', text: "Short-form video concepts may include vehicle walkarounds, feature demonstrations, staff-led content, test-drive moments and customer handovers." }
-        ],
-        prices: [{ label: "Standalone price", amount: "R9,950", suffix: "per month" }],
-        blocks: [
-          {
-            title: "Influencer Marketing",
-            content: [
-              { type: 'p', text: "Relevant local or automotive creators may be recommended for selected dealership campaigns. Big On Digital can coordinate creator selection, campaign briefing, deliverables, content approvals and reporting through its influencer agency partner." },
-              { type: 'note', text: "Influencer fees, usage rights, travel and additional production costs are quoted separately." }
-            ],
-            prices: [{ label: "Campaign management", amount: "From R8,000", suffix: "per campaign" }]
-          }
-        ]
-      }
-    },
-    {
-      type: 'Service',
-      id: 'meta-ads',
-      data: {
-        number: "6",
-        title: "Meta Advertising Management",
-        subtitle: "Turning Attention into Enquiries",
-        imageUrl: "/stock/meta-ads-live.jpg",
-        content: [
-          { type: 'p', text: "Meta advertising will support local awareness, website traffic and lead generation across Facebook and Instagram." },
-          { type: 'p', text: "The campaign structure will prioritise test-drive and vehicle enquiries, supported by retargeting and selected audience-building activity." },
-          { type: 'list', title: "Potential campaign focus:", items: [
-            "test-drive and vehicle enquiries;",
-            "current models and dealership offers;",
-            "WhatsApp and instant-form leads;",
-            "website traffic;",
-            "website and engagement retargeting;",
-            "selected audience-growth activity."
-          ] },
-          { type: 'list', title: "Monthly management includes:", items: [
-            "management of up to three active campaigns;",
-            "campaign planning and setup;",
-            "audience creation;",
-            "creative coordination;",
-            "ongoing optimisation;",
-            "retargeting;",
-            "monthly advertising reporting."
-          ] },
-          { type: 'note', text: "The advertising budget is paid directly by the client to Meta." }
-        ],
-        prices: [
-          { label: "Standalone management fee", amount: "R3,950", suffix: "per month" },
-          { label: "Recommended Meta media budget", amount: "From R6,000", suffix: "per month" }
-        ]
-      }
-    },
-
-    {
-      type: 'PartHeader',
       id: 'growth',
       navLabel: 'Growth Services',
       data: {
@@ -324,6 +333,7 @@ export const proposalData = {
         imageUrl: "/omoda-c5-studio.jpg"
       }
     },
+
     {
       type: 'Service',
       id: 'aeo',
@@ -332,7 +342,7 @@ export const proposalData = {
         title: "Monthly AEO Article and FAQs",
         subtitle: "Helping Customers Find Clear Answers",
         collapsible: true,
-        toggleLabel: "View Articles",
+        toggleLabel: "Read more",
         imageUrl: "/stock/aeo.jpg",
         content: [
           { type: 'p', text: "Search and answer-optimised website content can strengthen the dealership’s visibility across traditional search engines and AI-assisted search experiences." },
@@ -352,6 +362,7 @@ export const proposalData = {
         prices: [{ label: "Optional price", amount: "R2,250", suffix: "per month" }]
       }
     },
+
     {
       type: 'Service',
       id: 'google-ads',
@@ -360,7 +371,7 @@ export const proposalData = {
         title: "Google Ads",
         subtitle: "Reaching Buyers with Active Intent",
         collapsible: true,
-        toggleLabel: "View Google Ads",
+        toggleLabel: "Read more",
         imageUrl: "/stock/google-ads.jpg",
         content: [
           { type: 'p', text: "The dealership currently has active Google advertising. Big On Digital can conduct an independent audit to identify opportunities to improve campaign structure, targeting, advertising messages, conversion tracking and budget allocation." },
@@ -416,11 +427,13 @@ export const proposalData = {
         ]
       }
     },
+
     {
       type: 'BrandBand',
       id: 'brand-band',
       data: {}
     },
+
     {
       type: 'AboutAgency',
       id: 'about',
@@ -435,11 +448,11 @@ export const proposalData = {
         ],
         team: [
           {
-            name: "Andy",
-            title: "Technical & Performance Lead",
-            subtitle: "Development & Paid Media",
-            description: "Andy owns the technical and performance layer of the agency. From website development to paid advertising and tracking, he ensures every campaign is built on strong systems and optimised for results.",
-            image: "/team/andy.jpg"
+            name: "Francois",
+            title: "Creative & AI Lead",
+            subtitle: "Content, Design & Innovation",
+            description: "Francois leads creative execution while driving the integration of AI across content and workflows. He shapes how ideas come to life, from social media and design to intelligent content systems, ensuring the brand remains both relevant and forward-thinking.",
+            image: "/team/francois.jpg"
           },
           {
             name: "Dominique",
@@ -449,24 +462,26 @@ export const proposalData = {
             image: "/team/dominique.jpg"
           },
           {
-            name: "Francois",
-            title: "Creative & AI Lead",
-            subtitle: "Content, Design & Innovation",
-            description: "Francois leads creative execution while driving the integration of AI across content and workflows. He shapes how ideas come to life, from social media and design to intelligent content systems, ensuring the brand remains both relevant and forward-thinking.",
-            image: "/team/francois.jpg"
+            name: "Andy",
+            title: "Technical & Performance Lead",
+            subtitle: "Development & Paid Media",
+            description: "Andy owns the technical and performance layer of the agency. From website development to paid advertising and tracking, he ensures every campaign is built on strong systems and optimised for results.",
+            image: "/team/andy.jpg"
           }
         ]
       }
     }
+
   ],
 
   // Selectable items on the quotes page. Amounts are numeric so totals never depend on string parsing.
   quote: {
     optional: [
+      { id: 'influencer', group: "Influencer Marketing", label: "Influencer Marketing campaign management", amount: null, display: "From R8,000 per campaign" },
+      { id: 'content-only', group: "Content Creation", label: "Content Creation Only", amount: 9950, monthly: true, display: "R9,950 per month" },
       { id: 'aeo', group: "Monthly AEO Article and FAQs", label: "Monthly AEO Article and FAQs", amount: 2250, monthly: true, display: "R2,250 per month" },
       { id: 'gads-setup', group: "Google Ads", label: "Google Ads Restructure and Setup", amount: 5750, display: "R5,750" },
-      { id: 'gads-management', group: "Google Ads", label: "Google Ads Management", amount: 3950, monthly: true, display: "R3,950 per month", mediaBudget: "Recommended Google media budget: From R6,000 per month" },
-      { id: 'influencer', group: "Influencer Marketing", label: "Influencer Marketing campaign management", amount: null, display: "From R8,000 per campaign" }
+      { id: 'gads-management', group: "Google Ads", label: "Google Ads Management", amount: 3950, monthly: true, display: "R3,950 per month", mediaBudget: "Recommended Google media budget: From R6,000 per month" }
     ]
   }
 };

@@ -29,10 +29,11 @@ const ProposalBanner = ({ banner }) => {
 
   return (
     <div className="agency-band proposal-banner" ref={ref}>
-      <div className="container">
+      <div className="container proposal-banner-inner">
         <p className="proposal-banner-text">
           {banner.text} <strong>{banner.agency}</strong>
         </p>
+        {banner.logoUrl && <img src={banner.logoUrl} alt="" className="agency-logo" />}
       </div>
     </div>
   );

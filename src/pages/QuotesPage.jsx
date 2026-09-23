@@ -199,7 +199,7 @@ const QuotesPage = () => {
 
             {optional.length > 0 && (
               <section className="quote-step">
-                <h2 className="quote-step-title">Optional Growth Services</h2>
+                <h2 className="quote-step-title">Optional Services</h2>
                 {Object.entries(optionalGroups).map(([group, items]) => (
                   <div key={group} className="quote-option-group">
                     <p className="quote-option-group-title">{group}</p>
