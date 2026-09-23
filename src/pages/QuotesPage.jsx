@@ -193,6 +193,20 @@ const QuotesPage = () => {
                       <span className="quote-option-price">{pkg.price}<small>per month</small></span>
                     </label>
                   ))}
+
+                  <label className={`quote-option${packageId === null ? ' selected' : ''}`}>
+                    <input
+                      type="radio"
+                      name="package"
+                      checked={packageId === null}
+                      onChange={() => setPackageId(null)}
+                    />
+                    <span className="quote-option-mark" />
+                    <span className="quote-option-text">
+                      <span className="quote-option-name">No monthly package</span>
+                      <span className="quote-option-detail">Once-off and optional services only</span>
+                    </span>
+                  </label>
                 </div>
               </section>
             )}
@@ -241,6 +255,8 @@ const QuotesPage = () => {
                 </div>
               )}
 
+              {(selectedPackage || optionalMonthly.length > 0) && (
+                <>
               <div className="summary-divider"></div>
 
               <div className="summary-group">
@@ -260,6 +276,8 @@ const QuotesPage = () => {
                 </div>
                 {mediaBudgets.map(note => <p key={note} className="summary-media">{note}</p>)}
               </div>
+                </>
+              )}
 
               <div className="summary-divider"></div>
 
