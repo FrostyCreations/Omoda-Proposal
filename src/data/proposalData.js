@@ -89,7 +89,7 @@ export const proposalData = {
         number: "5",
         title: "Monthly Content Creation",
         subtitle: "Bringing the Dealership Experience to Life",
-        imageUrl: "/stock/content-creation.jpg",
+        imageUrl: "/glen/omoda-c9-lifestyle.webp",
         content: [
           { type: 'p', text: "Monthly on-site content sessions will create a reliable bank of original photography and video. The content will feature selected vehicles, model features, staff, showroom activity, customer experiences and current offers." },
           { type: 'p', text: "A planned shot list will ensure that each session supports the upcoming social media calendar and advertising campaigns." },
