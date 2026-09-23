@@ -11,11 +11,11 @@ export const proposalData = {
   agency: {
     "name": "Big On Digital",
     "contactEmail": "hello@bigondigital.co.za",
-    "logoUrl": "/big-on-digital-mark.png"
+    "logoUrl": "/big-on-digital-logo-dark.webp"
   },
   hero: {
     "title": "OMODA | JAECOO The Glen",
-    "banner": { "text": "Social Media Proposal by", "agency": "Big On Digital", "logoUrl": "/big-on-digital-mark.png" },
+    "banner": { "text": "Social Media Proposal by", "agency": "Big On Digital", "logoUrl": "/big-on-digital-logo-dark.webp" },
     "heroBgUrl": "/glen/jaecoo-j5-hero.webp"
   },
   sections: [

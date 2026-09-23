@@ -805,22 +805,17 @@
 
 /* ---------- Agency logo in the orange bars ---------- */
 .agency-logo {
-  height: 34px;
+  height: 32px;
   width: auto;
   display: block;
   flex-shrink: 0;
-  /* the mark carries orange, so it needs a white chip to stay legible on the orange bar */
-  padding: 4px 6px;
-  background: #ffffff;
-  border-radius: 4px;
 }
 
 .proposal-banner-inner,
 .footer-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+  gap: 14px;
   flex-wrap: wrap;
 }
 
@@ -840,6 +835,6 @@
   }
 
   .agency-logo {
-    height: 26px;
+    height: 24px;
   }
 }
