@@ -58,6 +58,18 @@ h1, h2 {
   left: 0;
   right: 0;
   z-index: 100;
+  /* the agency banner slides out of view once the reader scrolls */
+  transition: transform 0.3s ease;
+}
+
+.top-stack.hide-banner {
+  transform: translateY(calc(var(--banner-height) * -1));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .top-stack {
+    transition: none;
+  }
 }
 
 .top-stack .navbar {
@@ -66,6 +78,10 @@ h1, h2 {
 
 .mobile-menu {
   top: calc(var(--nav-height) + var(--banner-height));
+}
+
+.app-container.scrolled .mobile-menu {
+  top: var(--nav-height);
 }
 
 /* ---------- Nav: flat white bar with a hairline ---------- */

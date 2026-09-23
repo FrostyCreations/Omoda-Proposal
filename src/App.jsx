@@ -83,9 +83,9 @@ function App({ hideEditButton }) {
     .map(section => ({ name: section.navLabel, href: `#${section.id}` }))
 
   return (
-    <div className="app-container">
+    <div className={`app-container ${isScrolled ? 'scrolled' : ''}`}>
       {/* Fixed top stack: agency banner above the section nav */}
-      <div className="top-stack">
+      <div className={`top-stack ${isScrolled ? 'hide-banner' : ''}`}>
       <ProposalBanner banner={proposalData.hero?.banner} />
       <header className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
         <div className="nav-container">
