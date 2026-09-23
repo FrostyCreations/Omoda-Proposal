@@ -30,6 +30,7 @@
 
   /* Big On Digital orange, from the agency logo */
   --agency-orange: #ff9933;
+  --banner-height: 52px;
 
   /* Typography */
   --font-main: 'Inter', system-ui, -apple-system, sans-serif;

@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { useEditor } from './context/EditorContext'
 import DealerHero from './components/dealer/DealerHero'
+import ProposalBanner from './components/dealer/ProposalBanner'
+import BrandBand from './components/dealer/BrandBand'
 import BrandLockup from './components/dealer/BrandLockup'
 import Introduction from './components/dealer/Introduction'
 import PartHeader from './components/dealer/PartHeader'
@@ -37,6 +39,7 @@ const ComponentMap = {
   SetupSummary,
   Packages,
   RoadAhead,
+  BrandBand,
   ClientShowcase,
   AboutAgency,
   ExecutiveSummary,
@@ -81,7 +84,9 @@ function App({ hideEditButton }) {
 
   return (
     <div className="app-container">
-      {/* Sticky Navigation */}
+      {/* Fixed top stack: agency banner above the section nav */}
+      <div className="top-stack">
+      <ProposalBanner banner={proposalData.hero?.banner} />
       <header className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
         <div className="nav-container">
           <a href="#home" className="logo" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -117,6 +122,7 @@ function App({ hideEditButton }) {
           </button>
         </div>
       </header>
+      </div>
 
       {/* Mobile Menu */}
       <AnimatePresence>

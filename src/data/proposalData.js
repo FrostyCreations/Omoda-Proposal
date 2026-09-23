@@ -148,7 +148,7 @@ export const proposalData = {
         number: "3",
         title: "Meta Business and Tracking Setup",
         subtitle: "Building the Foundation for Measurable Advertising",
-        imageUrl: "/stock/tracking-dashboard.jpg",
+        imageUrl: "/stock/meta-business-suite.jpg",
         content: [
           { type: 'p', text: "Big On Digital will review and configure the dealership’s Meta business assets to support secure account management, effective advertising and measurable conversions." }
         ],
@@ -223,7 +223,7 @@ export const proposalData = {
         number: "4",
         title: "Social Media Design and Management",
         subtitle: "Keeping the Brand Visible and Relevant",
-        imageUrl: "/stock/social-apps.jpg",
+        imageUrl: "/stock/social-media-management.jpg",
         content: [
           { type: 'p', text: "Big On Digital will plan, create and manage a coordinated monthly presence across Facebook, Instagram, TikTok and Google Business." },
           { type: 'p', text: "Content will be adapted for each platform, combining vehicle promotions with educational, dealership-led and community content. Clear calls to action will encourage WhatsApp conversations, website visits and test-drive enquiries." },
@@ -285,7 +285,7 @@ export const proposalData = {
         number: "6",
         title: "Meta Advertising Management",
         subtitle: "Turning Attention into Enquiries",
-        imageUrl: "/stock/facebook-ad.jpg",
+        imageUrl: "/stock/meta-ads-live.jpg",
         content: [
           { type: 'p', text: "Meta advertising will support local awareness, website traffic and lead generation across Facebook and Instagram." },
           { type: 'p', text: "The campaign structure will prioritise test-drive and vehicle enquiries, supported by retargeting and selected audience-building activity." },
@@ -331,7 +331,7 @@ export const proposalData = {
         number: "7",
         title: "Monthly AEO Article and FAQs",
         subtitle: "Helping Customers Find Clear Answers",
-        imageUrl: "/stock/search-questions.jpg",
+        imageUrl: "/stock/aeo.jpg",
         content: [
           { type: 'p', text: "Search and answer-optimised website content can strengthen the dealership’s visibility across traditional search engines and AI-assisted search experiences." },
           { type: 'p', text: "Each article will address relevant customer questions about vehicle models, hybrid and electric technology, finance, trade-ins, servicing, test drives or ownership." },
@@ -357,7 +357,7 @@ export const proposalData = {
         number: "8",
         title: "Google Ads",
         subtitle: "Reaching Buyers with Active Intent",
-        imageUrl: "/stock/google-search.jpg",
+        imageUrl: "/stock/google-ads.jpg",
         content: [
           { type: 'p', text: "The dealership currently has active Google advertising. Big On Digital can conduct an independent audit to identify opportunities to improve campaign structure, targeting, advertising messages, conversion tracking and budget allocation." },
           { type: 'list', title: "Potential campaign opportunities include:", items: [
@@ -369,13 +369,6 @@ export const proposalData = {
           ] }
         ],
         blocks: [
-          {
-            title: "Google Ads Audit and Recommendations",
-            content: [
-              { type: 'p', text: "Review of the existing account, including campaign structure, keywords, search terms, targeting, advertising messages, conversion tracking and budget use." }
-            ],
-            prices: [{ label: "Once-off price", amount: "R2,950" }]
-          },
           {
             title: "Google Ads Restructure and Setup",
             content: [
@@ -427,6 +420,11 @@ export const proposalData = {
       }
     },
     {
+      type: 'BrandBand',
+      id: 'brand-band',
+      data: {}
+    },
+    {
       type: 'AboutAgency',
       id: 'about',
       data: {
@@ -469,7 +467,6 @@ export const proposalData = {
   quote: {
     optional: [
       { id: 'aeo', group: "Monthly AEO Article and FAQs", label: "Monthly AEO Article and FAQs", amount: 2250, monthly: true, display: "R2,250 per month" },
-      { id: 'gads-audit', group: "Google Ads", label: "Google Ads Audit and Recommendations", amount: 2950, display: "R2,950" },
       { id: 'gads-setup', group: "Google Ads", label: "Google Ads Restructure and Setup", amount: 5750, display: "R5,750" },
       { id: 'gads-management', group: "Google Ads", label: "Google Ads Management", amount: 3950, monthly: true, display: "R3,950 per month", mediaBudget: "Recommended Google media budget: From R6,000 per month" },
       { id: 'influencer', group: "Influencer Marketing", label: "Influencer Marketing campaign management", amount: null, display: "From R8,000 per campaign" }

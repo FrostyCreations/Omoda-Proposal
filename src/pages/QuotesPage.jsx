@@ -3,6 +3,7 @@ import { useEditor } from '../context/EditorContext';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, CheckCircle2, FileText } from 'lucide-react';
 import Footer from '../components/Footer';
+import ProposalBanner from '../components/dealer/ProposalBanner';
 import './QuotesPage.css';
 import './QuotesDealer.css';
 
@@ -103,6 +104,7 @@ const QuotesPage = () => {
 
   return (
     <div className="quotes-page">
+      <ProposalBanner banner={proposalData.hero?.banner} />
       <div className="quotes-header">
         <div className="container">
           <Link to="/" className="back-link">

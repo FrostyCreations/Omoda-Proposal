@@ -113,7 +113,7 @@
 /* ---------- Hero: full-bleed photo ---------- */
 .dealer-hero {
   position: relative;
-  margin-top: var(--nav-height);
+  margin-top: calc(var(--nav-height) + var(--banner-height));
   height: min(78vh, 720px);
   min-height: 460px;
   overflow: hidden;
@@ -167,7 +167,7 @@
 /* ---------- Model card: gradient panel + charcoal bar ---------- */
 .model-card {
   position: sticky;
-  top: calc(var(--nav-height) + 24px);
+  top: calc(var(--nav-height) + var(--banner-height) + 24px);
 }
 
 .model-card-media {
@@ -766,4 +766,23 @@
   .client-grid {
     grid-template-columns: 1fr;
   }
+}
+
+
+/* ---------- Dealer band: closes the proposal before the agency section ---------- */
+.brand-band {
+  background: var(--dark-surface);
+  padding: 40px 0;
+}
+
+.brand-band-inner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.brand-band-rule {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.35);
 }
