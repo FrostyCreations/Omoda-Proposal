@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css'
 import App from './App.jsx'
+import ScrollToTop from './components/ScrollToTop.jsx'
 import EditorPage from './pages/EditorPage.jsx'
 import QuotesPage from './pages/QuotesPage.jsx'
 import { EditorProvider } from './context/EditorContext.jsx'
@@ -13,6 +14,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <EditorProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<App hideEditButton={true} />} />
           <Route path="/editor" element={<EditorPage />} />
