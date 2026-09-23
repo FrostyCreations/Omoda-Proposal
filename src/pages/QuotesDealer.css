@@ -166,6 +166,10 @@
   margin-bottom: 12px;
 }
 
+.setup-totals {
+  margin-top: 16px;
+}
+
 /* Summary card */
 .summary-column {
   position: sticky;

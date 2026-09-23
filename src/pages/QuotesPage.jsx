@@ -26,8 +26,11 @@ const QuotesPage = () => {
   const packages = useMemo(() => packagesData?.packages || [], [packagesData]);
   const optional = useMemo(() => proposalData.quote?.optional || [], [proposalData]);
 
+  const setupRows = useMemo(() => setup?.rows || [], [setup]);
+
   const [packageId, setPackageId] = useState(() => (packages.find(p => p.featured) || packages[0])?.id);
   const [selectedOptional, setSelectedOptional] = useState(new Set());
+  const [selectedSetup, setSelectedSetup] = useState(() => new Set(setupRows.map(row => row.service)));
 
   const toggleOptional = (id) => {
     const next = new Set(selectedOptional);
@@ -35,6 +38,18 @@ const QuotesPage = () => {
     else next.add(id);
     setSelectedOptional(next);
   };
+
+  const toggleSetup = (service) => {
+    const next = new Set(selectedSetup);
+    if (next.has(service)) next.delete(service);
+    else next.add(service);
+    setSelectedSetup(next);
+  };
+
+  const chosenSetup = setupRows.filter(row => selectedSetup.has(row.service));
+  const setupTotal = chosenSetup.reduce((sum, row) => sum + parseRand(row.price), 0);
+  const setupDeposit = Math.round(setupTotal / 2);
+  const setupBalance = setupTotal - setupDeposit;
 
   const selectedPackage = packages.find(p => p.id === packageId);
   const chosenOptional = optional.filter(item => selectedOptional.has(item.id));
@@ -51,11 +66,11 @@ const QuotesPage = () => {
 
   const getApprovalText = () => {
     const lines = [`${proposalData.client?.name}: Social Media Proposal approved.`, ''];
-    if (setup) {
+    if (setup && chosenSetup.length) {
       lines.push(setup.title);
-      setup.rows.forEach(row => lines.push(`- ${row.service}: ${row.price}`));
-      lines.push(`${setup.total.label}: ${setup.total.amount}`);
-      lines.push(`${setup.deposit.label}: ${setup.deposit.amount}`, '');
+      chosenSetup.forEach(row => lines.push(`- ${row.service}: ${row.price}`));
+      lines.push(`${setup.total.label}: ${formatRand(setupTotal)}`);
+      lines.push(`${setup.deposit.label}: ${formatRand(setupDeposit)}`, '');
     }
     if (selectedPackage) {
       lines.push(`${selectedPackage.label}: ${selectedPackage.name} (${selectedPackage.price} per month)`, '');
@@ -123,20 +138,34 @@ const QuotesPage = () => {
             {setup && (
               <section className="quote-step">
                 <h2 className="quote-step-title">Once-Off Marketing Foundation</h2>
-                <div className="spec-sheet">
-                  <div className="spec-sheet-row head">
-                    <span>{setup.columns[0]}</span>
-                    <span>{setup.columns[1]}</span>
-                  </div>
-                  {setup.rows.map(row => (
-                    <div key={row.service} className="spec-sheet-row">
-                      <span>{row.service}</span>
-                      <span className="spec-sheet-amount">{row.price}</span>
-                    </div>
+                <div className="quote-options">
+                  {setupRows.map(row => (
+                    <label key={row.service} className={`quote-option checkbox${selectedSetup.has(row.service) ? ' selected' : ''}`}>
+                      <input
+                        type="checkbox"
+                        checked={selectedSetup.has(row.service)}
+                        onChange={() => toggleSetup(row.service)}
+                      />
+                      <span className="quote-option-mark" />
+                      <span className="quote-option-text">
+                        <span className="quote-option-name small">{row.service}</span>
+                      </span>
+                      <span className="quote-option-price small">{row.price}</span>
+                    </label>
                   ))}
+                </div>
+                <div className="spec-sheet setup-totals">
                   <div className="spec-sheet-row total">
                     <span>{setup.total.label}</span>
-                    <span className="spec-sheet-amount">{setup.total.amount}</span>
+                    <span className="spec-sheet-amount">{formatRand(setupTotal)}</span>
+                  </div>
+                  <div className="spec-sheet-row">
+                    <span>{setup.deposit.label}</span>
+                    <span className="spec-sheet-amount">{formatRand(setupDeposit)}</span>
+                  </div>
+                  <div className="spec-sheet-row">
+                    <span>{setup.balance.label}</span>
+                    <span className="spec-sheet-amount">{formatRand(setupBalance)}</span>
                   </div>
                 </div>
                 <p className="dealer-note quote-step-note">{setup.note}</p>
@@ -200,12 +229,12 @@ const QuotesPage = () => {
             <div className="summary-card glass-panel dark">
               <h3 className="summary-title">Investment Summary</h3>
 
-              {setup && (
+              {setup && chosenSetup.length > 0 && (
                 <div className="summary-group">
                   <p className="summary-group-title">Once-Off Marketing Foundation</p>
-                  <div className="summary-row"><span>{setup.total.label}</span><span className="amount">{setup.total.amount}</span></div>
-                  <div className="summary-row"><span>{setup.deposit.label}</span><span className="amount">{setup.deposit.amount}</span></div>
-                  <div className="summary-row"><span>{setup.balance.label}</span><span className="amount">{setup.balance.amount}</span></div>
+                  <div className="summary-row"><span>{setup.total.label}</span><span className="amount">{formatRand(setupTotal)}</span></div>
+                  <div className="summary-row"><span>{setup.deposit.label}</span><span className="amount">{formatRand(setupDeposit)}</span></div>
+                  <div className="summary-row"><span>{setup.balance.label}</span><span className="amount">{formatRand(setupBalance)}</span></div>
                   {optionalOnceOff.map(item => (
                     <div key={item.id} className="summary-row"><span>{item.label}</span><span className="amount">{item.display}</span></div>
                   ))}
