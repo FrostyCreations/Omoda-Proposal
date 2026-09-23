@@ -422,7 +422,7 @@ export const proposalData = {
         clients: [
           { name: "Ferris Cars", tagline: "Luxury Performance Automotive Group", logoUrl: "/clients/ferris-group.webp", platform: "Facebook", url: "https://www.facebook.com/ferriscarssa/" },
           { name: "WorkPods", tagline: "Entrepreneurial Business Growth Campus", logoUrl: "/clients/workpods.webp", platform: "Instagram", url: "https://www.instagram.com/workpodscommunity/" },
-          { name: "Century 21 Wildlife", tagline: "Luxury Bushveld Property Experts", logoUrl: "/clients/century-21-wildlife.webp", platform: "Website", url: "https://www.century21wildlife.co.za/" },
+          { name: "WeFin Car Rentals", tagline: "Progressive Vehicle Finance Specialists", logoUrl: "/clients/wefin-car-rentals.webp", platform: "TikTok", url: "https://www.tiktok.com/@wefincars" },
           { name: "Cashbox Global", tagline: "Private Structured Investment Specialists", logoUrl: "/clients/cashbox-global.webp", platform: "LinkedIn", url: "https://www.linkedin.com/company/cashbox-global/" }
         ]
       }
@@ -448,18 +448,18 @@ export const proposalData = {
         ],
         team: [
           {
-            name: "Francois",
-            title: "Creative & AI Lead",
-            subtitle: "Content, Design & Innovation",
-            description: "Francois leads creative execution while driving the integration of AI across content and workflows. He shapes how ideas come to life, from social media and design to intelligent content systems, ensuring the brand remains both relevant and forward-thinking.",
-            image: "/team/francois.jpg"
-          },
-          {
             name: "Dominique",
             title: "Founder & Strategic Director",
             subtitle: "Growth & Strategy",
             description: "Dominique defines the vision behind every project, guiding brand positioning, marketing strategy, and long-term growth. She works closely with clients to translate ambition into structured digital direction that delivers measurable results.",
             image: "/team/dominique.jpg"
+          },
+          {
+            name: "Francois",
+            title: "Creative & AI Lead",
+            subtitle: "Content, Design & Innovation",
+            description: "Francois leads creative execution while driving the integration of AI across content and workflows. He shapes how ideas come to life, from social media and design to intelligent content systems, ensuring the brand remains both relevant and forward-thinking.",
+            image: "/team/francois.jpg"
           },
           {
             name: "Andy",

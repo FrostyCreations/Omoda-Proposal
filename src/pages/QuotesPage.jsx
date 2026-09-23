@@ -7,7 +7,7 @@ import ProposalBanner from '../components/dealer/ProposalBanner';
 import './QuotesPage.css';
 import './QuotesDealer.css';
 
-const APPROVAL_RECIPIENT = "francois.bigondigital@gmail.com";
+const APPROVAL_RECIPIENT = "dominique@bigondigital.co.za";
 
 // "R19,500" -> 19500
 const parseRand = (value) => parseInt(String(value).replace(/[^\d]/g, ''), 10) || 0;
