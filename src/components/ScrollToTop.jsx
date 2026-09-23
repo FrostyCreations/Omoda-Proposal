@@ -7,8 +7,25 @@ import { useLocation } from 'react-router-dom';
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
+  // Stop the browser putting the old page back where it was on back/forward
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+  }, []);
+
+  useEffect(() => {
+    // The page scrolls smoothly by CSS, which would animate this jump, so the
+    // behaviour is switched off for the reset and restored straight after.
+    const html = document.documentElement;
+    const previous = html.style.scrollBehavior;
+    html.style.scrollBehavior = 'auto';
+
+    window.scrollTo(0, 0);
+    html.scrollTop = 0;
+    document.body.scrollTop = 0;
+
+    html.style.scrollBehavior = previous;
   }, [pathname]);
 
   return null;
