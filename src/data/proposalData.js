@@ -119,12 +119,13 @@ export const proposalData = {
 
     {
       type: 'Service',
-      id: 'meta-ads',
+      id: 'meta-campaigns',
       data: {
         number: "6",
         title: "Meta Advertising Management",
         subtitle: "Turning Attention into Enquiries",
-        imageUrl: "/stock/meta-ads-live.jpg",
+        imageUrl: "/stock/meta-campaign.jpg",
+        imageFit: "fit-whole",
         content: [
           { type: 'p', text: "Meta advertising will support local awareness, website traffic and lead generation across Facebook and Instagram." },
           { type: 'p', text: "The campaign structure will prioritise test-drive and vehicle enquiries, supported by retargeting and selected audience-building activity." },
@@ -365,14 +366,14 @@ export const proposalData = {
 
     {
       type: 'Service',
-      id: 'google-ads',
+      id: 'paid-search',
       data: {
         number: "8",
         title: "Google Ads",
         subtitle: "Reaching Buyers with Active Intent",
         collapsible: true,
         toggleLabel: "Read more",
-        imageUrl: "/stock/google-ads.jpg",
+        imageUrl: "/stock/paid-search.jpg",
         content: [
           { type: 'p', text: "The dealership currently has active Google advertising. Big On Digital can conduct an independent audit to identify opportunities to improve campaign structure, targeting, advertising messages, conversion tracking and budget allocation." },
           { type: 'list', title: "Potential campaign opportunities include:", items: [

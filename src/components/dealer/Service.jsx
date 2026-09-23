@@ -66,7 +66,7 @@ const Service = ({ data }) => {
             <ContentBlocks content={data.content} />
           </div>
           <div className="model-card">
-            <div className={`model-card-media${data.imageFit === 'contain' ? ' contain' : ''}`}>
+            <div className={`model-card-media${data.imageFit ? ' ' + data.imageFit : ''}`}>
               <OptimizedImage src={data.imageUrl} alt="" className="model-card-img" />
             </div>
             {data.prices && <PriceBar prices={data.prices} />}

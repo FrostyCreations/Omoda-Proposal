@@ -838,3 +838,13 @@
     height: 24px;
   }
 }
+
+/* Whole-image cards (screenshots that must not be cropped) */
+.model-card-media.fit-whole {
+  background: #ffffff;
+}
+
+.model-card-media.fit-whole .optimized-image {
+  object-fit: contain;
+  padding: 10px;
+}
