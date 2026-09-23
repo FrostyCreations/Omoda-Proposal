@@ -331,6 +331,8 @@ export const proposalData = {
         number: "7",
         title: "Monthly AEO Article and FAQs",
         subtitle: "Helping Customers Find Clear Answers",
+        collapsible: true,
+        toggleLabel: "View Articles",
         imageUrl: "/stock/aeo.jpg",
         content: [
           { type: 'p', text: "Search and answer-optimised website content can strengthen the dealership’s visibility across traditional search engines and AI-assisted search experiences." },
@@ -357,6 +359,8 @@ export const proposalData = {
         number: "8",
         title: "Google Ads",
         subtitle: "Reaching Buyers with Active Intent",
+        collapsible: true,
+        toggleLabel: "View Google Ads",
         imageUrl: "/stock/google-ads.jpg",
         content: [
           { type: 'p', text: "The dealership currently has active Google advertising. Big On Digital can conduct an independent audit to identify opportunities to improve campaign structure, targeting, advertising messages, conversion tracking and budget allocation." },
@@ -392,17 +396,10 @@ export const proposalData = {
     },
 
     {
-      type: 'RoadAhead',
-      id: 'road-ahead',
-      navLabel: 'The Road Ahead',
+      type: 'ApproveCta',
+      id: 'approve',
       data: {
-        title: "The Road Ahead",
-        paragraphs: [
-          "This proposal provides OMODA | JAECOO The Glen with a coordinated marketing foundation designed to strengthen local visibility and create more opportunities for customer engagement.",
-          "Big On Digital will combine strategic direction with consistent execution, giving the dealership a recognisable local presence and clearer insight into the activity generating enquiries.",
-          "Package 3 offers the most complete approach, connecting original dealership content with social media management and targeted Meta advertising."
-        ],
-        imageUrl: "/glen/omoda-c5-shs.webp"
+        buttonText: "View Quotes and Approve"
       }
     },
 

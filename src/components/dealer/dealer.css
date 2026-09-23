@@ -483,37 +483,48 @@
   margin: 16px 4px 0;
 }
 
-/* ---------- The Road Ahead ---------- */
-.road-ahead {
-  position: relative;
-  padding: 80px min(8vw, 96px);
-  border-radius: var(--radius-card);
-  background-color: var(--dark-surface);
-  background-image:
-    linear-gradient(115deg, transparent 62%, rgba(255, 255, 255, 0.05) 62%, rgba(255, 255, 255, 0.05) 70%, transparent 70%),
-    linear-gradient(115deg, transparent 74%, rgba(255, 255, 255, 0.04) 74%, rgba(255, 255, 255, 0.04) 80%, transparent 80%);
-  --accent-primary: #c9d8e0;
-  --accent-hover: #ffffff;
-  --btn-text: #1f1f2e;
+/* ---------- Optional services: collapsed rows ---------- */
+.dealer-section.service.collapsed {
+  padding: 40px 0;
 }
 
-.road-ahead-title {
-  color: #ffffff;
-  font-size: clamp(1.6rem, 3.4vw, 2.6rem);
-  margin-bottom: 28px;
+.service-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
 }
 
-.road-ahead-text {
-  max-width: 720px;
-  font-size: 1.1rem;
-  line-height: 1.75;
-  color: rgba(255, 255, 255, 0.82);
-  margin-bottom: 18px;
+.service-toggle-title {
+  margin-bottom: 8px;
 }
 
-.road-ahead-cta {
+.service-toggle-subtitle {
+  margin-bottom: 0;
+}
+
+.service-toggle {
+  display: inline-flex;
+  align-items: center;
   gap: 10px;
-  margin-top: 20px;
+  flex-shrink: 0;
+}
+
+.service-toggle.hide {
+  margin-top: 40px;
+}
+
+/* ---------- Closing call to action ---------- */
+.approve-cta {
+  text-align: center;
+  background: var(--bg-secondary);
+}
+
+.approve-cta-button {
+  gap: 10px;
+  font-size: 1.05rem;
+  padding: 16px 36px;
 }
 
 /* ---------- Responsive ---------- */
@@ -547,12 +558,17 @@
     padding: 64px 0;
   }
 
-  .spec-sheet-row {
-    padding: 14px 16px;
+  .service-toggle-row {
+    gap: 24px;
   }
 
-  .road-ahead {
-    padding: 48px 24px;
+  .service-toggle {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .spec-sheet-row {
+    padding: 14px 16px;
   }
 }
 

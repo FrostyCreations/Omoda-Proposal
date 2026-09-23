@@ -12,7 +12,7 @@ import PartHeader from './components/dealer/PartHeader'
 import Service from './components/dealer/Service'
 import SetupSummary from './components/dealer/SetupSummary'
 import Packages from './components/dealer/Packages'
-import RoadAhead from './components/dealer/RoadAhead'
+import ApproveCta from './components/dealer/ApproveCta'
 import ClientShowcase from './components/dealer/ClientShowcase'
 import AboutAgency from './components/dealer/AboutAgency'
 import ExecutiveSummary from './components/ExecutiveSummary'
@@ -38,7 +38,7 @@ const ComponentMap = {
   Service,
   SetupSummary,
   Packages,
-  RoadAhead,
+  ApproveCta,
   BrandBand,
   ClientShowcase,
   AboutAgency,

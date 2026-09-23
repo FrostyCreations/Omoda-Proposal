@@ -1,4 +1,5 @@
-import { memo } from 'react';
+import { memo, useState } from 'react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 import OptimizedImage from '../OptimizedImage';
 import './dealer.css';
 
@@ -34,6 +35,25 @@ export const PriceBar = ({ prices = [] }) => (
 
 const Service = ({ data }) => {
   const imageFirst = Number(data.number) % 2 === 1;
+  // Optional services stay closed until the reader asks for them
+  const [isOpen, setIsOpen] = useState(!data.collapsible);
+
+  if (data.collapsible && !isOpen) {
+    return (
+      <section className={`dealer-section service collapsed${imageFirst ? '' : ' alt'}`}>
+        <div className="container service-toggle-row">
+          <div>
+            <span className="dealer-eyebrow">{String(data.number).padStart(2, '0')}</span>
+            <h2 className="dealer-title service-toggle-title">{data.title}</h2>
+            <h3 className="service-subtitle service-toggle-subtitle">{data.subtitle}</h3>
+          </div>
+          <button type="button" className="btn-primary service-toggle" onClick={() => setIsOpen(true)}>
+            {data.toggleLabel} <ChevronDown size={18} />
+          </button>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className={`dealer-section service${imageFirst ? '' : ' alt'}`}>
@@ -68,6 +88,12 @@ const Service = ({ data }) => {
         )}
 
         {data.footnote && <p className="dealer-note service-footnote">{data.footnote}</p>}
+
+        {data.collapsible && (
+          <button type="button" className="btn-secondary service-toggle hide" onClick={() => setIsOpen(false)}>
+            Hide {data.title} <ChevronUp size={18} />
+          </button>
+        )}
       </div>
     </section>
   );
