@@ -175,38 +175,30 @@ const QuotesPage = () => {
             {packagesData && (
               <section className="quote-step">
                 <h2 className="quote-step-title">{packagesData.title}</h2>
+                <p className="quote-step-hint">Choose one, or click it again to continue without a package.</p>
                 <div className="quote-options" role="radiogroup">
-                  {packages.map(pkg => (
-                    <label key={pkg.id} className={`quote-option${packageId === pkg.id ? ' selected' : ''}`}>
-                      <input
-                        type="radio"
-                        name="package"
-                        checked={packageId === pkg.id}
-                        onChange={() => setPackageId(pkg.id)}
-                      />
-                      <span className="quote-option-mark" />
-                      <span className="quote-option-text">
-                        <span className="quote-option-label">{pkg.label}</span>
-                        <span className="quote-option-name">{pkg.name}</span>
-                        <span className="quote-option-detail">{pkg.items.map(item => item.service).join(' · ')}</span>
-                      </span>
-                      <span className="quote-option-price">{pkg.price}<small>per month</small></span>
-                    </label>
-                  ))}
-
-                  <label className={`quote-option${packageId === null ? ' selected' : ''}`}>
-                    <input
-                      type="radio"
-                      name="package"
-                      checked={packageId === null}
-                      onChange={() => setPackageId(null)}
-                    />
-                    <span className="quote-option-mark" />
-                    <span className="quote-option-text">
-                      <span className="quote-option-name">No monthly package</span>
-                      <span className="quote-option-detail">Once-off and optional services only</span>
-                    </span>
-                  </label>
+                  {packages.map(pkg => {
+                    const isSelected = packageId === pkg.id;
+                    return (
+                      <label key={pkg.id} className={`quote-option${isSelected ? ' selected' : ''}`}>
+                        <input
+                          type="radio"
+                          name="package"
+                          checked={isSelected}
+                          onChange={() => {}}
+                          // clicking the selected package clears it, so no package is also a valid answer
+                          onClick={() => setPackageId(isSelected ? null : pkg.id)}
+                        />
+                        <span className="quote-option-mark" />
+                        <span className="quote-option-text">
+                          <span className="quote-option-label">{pkg.label}</span>
+                          <span className="quote-option-name">{pkg.name}</span>
+                          <span className="quote-option-detail">{pkg.items.map(item => item.service).join(' · ')}</span>
+                        </span>
+                        <span className="quote-option-price">{pkg.price}<small>per month</small></span>
+                      </label>
+                    );
+                  })}
                 </div>
               </section>
             )}
