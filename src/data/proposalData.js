@@ -43,6 +43,58 @@ export const proposalData = {
     },
 
     {
+      type: 'Packages',
+      id: 'packages',
+      navLabel: 'Packages',
+      data: {
+        title: "Monthly Package Options",
+        columns: ["Included Service", "Monthly Value"],
+        packages: [
+          {
+            id: 'package-1',
+            label: "Package 1",
+            name: "Digital Presence",
+            description: "A consistent monthly social media presence designed to strengthen dealership visibility and maintain engagement across priority platforms.",
+            items: [
+              { service: "Social Media Design and Management", value: "TBC", pending: true }
+            ],
+            totalValue: "R9,950",
+            price: "R9,950"
+          },
+          {
+            id: 'package-2',
+            label: "Package 2",
+            name: "Content and Community",
+            description: "A complete organic marketing package combining social media management with original dealership photography and video.",
+            items: [
+              { service: "Social Media Design and Management", value: "TBC", pending: true },
+              { service: "Monthly Photography and Videography", value: "R9,950" }
+            ],
+            totalValue: "R19,900",
+            discount: "R400",
+            price: "R19,500"
+          },
+          {
+            id: 'package-3',
+            label: "Package 3",
+            name: "Content and Lead Generation",
+            description: "A coordinated content and advertising package designed to build dealership visibility and convert audience attention into measurable enquiries.",
+            items: [
+              { service: "Social Media Design and Management", value: "TBC", pending: true },
+              { service: "Monthly Photography and Videography", value: "R9,950" },
+              { service: "Meta Advertising Management", value: "R3,950" }
+            ],
+            totalValue: "R23,850",
+            discount: "R900",
+            price: "R22,950",
+            mediaBudget: "Meta media budget: From R6,000 per month, paid directly to Meta.",
+            featured: true
+          }
+        ]
+      }
+    },
+
+    {
       type: 'PartHeader',
       id: 'once-off',
       navLabel: 'Once-Off Foundation',
@@ -96,7 +148,7 @@ export const proposalData = {
         number: "3",
         title: "Meta Business and Tracking Setup",
         subtitle: "Building the Foundation for Measurable Advertising",
-        imageUrl: "/brand/jaecoo-j7-city.jpg",
+        imageUrl: "/stock/tracking-dashboard.jpg",
         content: [
           { type: 'p', text: "Big On Digital will review and configure the dealership’s Meta business assets to support secure account management, effective advertising and measurable conversions." }
         ],
@@ -171,7 +223,7 @@ export const proposalData = {
         number: "4",
         title: "Social Media Design and Management",
         subtitle: "Keeping the Brand Visible and Relevant",
-        imageUrl: "/glen/omoda-c7-studio.webp",
+        imageUrl: "/stock/social-apps.jpg",
         content: [
           { type: 'p', text: "Big On Digital will plan, create and manage a coordinated monthly presence across Facebook, Instagram, TikTok and Google Business." },
           { type: 'p', text: "Content will be adapted for each platform, combining vehicle promotions with educational, dealership-led and community content. Clear calls to action will encourage WhatsApp conversations, website visits and test-drive enquiries." },
@@ -233,8 +285,7 @@ export const proposalData = {
         number: "6",
         title: "Meta Advertising Management",
         subtitle: "Turning Attention into Enquiries",
-        imageUrl: "/glen/jaecoo-j7-cutout.webp",
-        imageFit: "contain",
+        imageUrl: "/stock/facebook-ad.jpg",
         content: [
           { type: 'p', text: "Meta advertising will support local awareness, website traffic and lead generation across Facebook and Instagram." },
           { type: 'p', text: "The campaign structure will prioritise test-drive and vehicle enquiries, supported by retargeting and selected audience-building activity." },
@@ -265,58 +316,6 @@ export const proposalData = {
     },
 
     {
-      type: 'Packages',
-      id: 'packages',
-      navLabel: 'Packages',
-      data: {
-        title: "Monthly Package Options",
-        columns: ["Included Service", "Monthly Value"],
-        packages: [
-          {
-            id: 'package-1',
-            label: "Package 1",
-            name: "Digital Presence",
-            description: "A consistent monthly social media presence designed to strengthen dealership visibility and maintain engagement across priority platforms.",
-            items: [
-              { service: "Social Media Design and Management", value: "TBC", pending: true }
-            ],
-            totalValue: "R9,950",
-            price: "R9,950"
-          },
-          {
-            id: 'package-2',
-            label: "Package 2",
-            name: "Content and Community",
-            description: "A complete organic marketing package combining social media management with original dealership photography and video.",
-            items: [
-              { service: "Social Media Design and Management", value: "TBC", pending: true },
-              { service: "Monthly Photography and Videography", value: "R9,950" }
-            ],
-            totalValue: "R19,900",
-            discount: "R400",
-            price: "R19,500"
-          },
-          {
-            id: 'package-3',
-            label: "Package 3",
-            name: "Content and Lead Generation",
-            description: "A coordinated content and advertising package designed to build dealership visibility and convert audience attention into measurable enquiries.",
-            items: [
-              { service: "Social Media Design and Management", value: "TBC", pending: true },
-              { service: "Monthly Photography and Videography", value: "R9,950" },
-              { service: "Meta Advertising Management", value: "R3,950" }
-            ],
-            totalValue: "R23,850",
-            discount: "R900",
-            price: "R22,950",
-            mediaBudget: "Meta media budget: From R6,000 per month, paid directly to Meta.",
-            featured: true
-          }
-        ]
-      }
-    },
-
-    {
       type: 'PartHeader',
       id: 'growth',
       navLabel: 'Growth Services',
@@ -332,7 +331,7 @@ export const proposalData = {
         number: "7",
         title: "Monthly AEO Article and FAQs",
         subtitle: "Helping Customers Find Clear Answers",
-        imageUrl: "/brand/jaecoo-j5-ev-studio.jpg",
+        imageUrl: "/stock/search-questions.jpg",
         content: [
           { type: 'p', text: "Search and answer-optimised website content can strengthen the dealership’s visibility across traditional search engines and AI-assisted search experiences." },
           { type: 'p', text: "Each article will address relevant customer questions about vehicle models, hybrid and electric technology, finance, trade-ins, servicing, test drives or ownership." },
@@ -358,8 +357,7 @@ export const proposalData = {
         number: "8",
         title: "Google Ads",
         subtitle: "Reaching Buyers with Active Intent",
-        imageUrl: "/glen/jaecoo-j7-shs-cutout.webp",
-        imageFit: "contain",
+        imageUrl: "/stock/google-search.jpg",
         content: [
           { type: 'p', text: "The dealership currently has active Google advertising. Big On Digital can conduct an independent audit to identify opportunities to improve campaign structure, targeting, advertising messages, conversion tracking and budget allocation." },
           { type: 'list', title: "Potential campaign opportunities include:", items: [
